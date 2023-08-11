@@ -1,0 +1,124 @@
+/*! Мобильный адаптив */
+@media (max-width: 992px) {
+  html {
+    font-size: 0.8rem;
+  }
+  .width-100percent-mobile {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 0.7rem;
+    text-align: center;
+  }
+}
+
+/*! Цвета фона */
+$bg-colors: (white: #FFFFFF, yellow: #F5D654, blue: #325389, lightblue: #BCCFEE, skyblue: #9AB7E5, grey: #292D33, red: #EA2525);
+
+@each $key, $color in $bg-colors {
+  .bg-#{$key} { background-color: $color; }
+}
+
+/*! Фон при наведении */
+.hover-skyblue:hover{
+    background-color: #9AB7E5;
+}
+
+
+/*! Цвета текста */
+$text-colors: (yellow: #F1C50E, white: #FFFFFF);
+
+@each $key, $color in $text-colors {
+  .text-#{$key} { color: $color; }
+}
+
+
+
+/*! Размер текста */
+@for $i from 1 through 15{
+  .font-size-#{$i} { font-size: 0.5rem * $i;}
+}
+
+@for $i from 1 through 6{
+  .p-#{$i} { font-size: 0.3rem * $i;}
+}
+
+
+/*! Шрифты */
+.font-roboto{
+    font-family: Roboto;
+}
+
+/*! Жирность текста */
+@each $setting in 100, 300 {
+  .font-weight-#{$setting} {font-weight: $setting;}
+}
+
+/*! Фоновые цвета */
+@each $setting in left, right, center, justify {
+  .text-align-#{$setting} {text-align: $setting;}
+}
+
+
+
+/*! Отступы */
+@for $i from 0 through 15{
+  .margin-#{10 * $i}px { margin: 10px * $i;}
+  .margin-top-#{10 * $i}px { margin-top: 10px * $i;}
+  .margin-bottom-#{10 * $i}px { margin-bottom: 10px * $i;}
+  .margin-left-#{10 * $i}px { margin-left: 10px * $i;}
+  .margin-right-#{10 * $i}px { margin-right: 10px * $i;}
+}
+
+@for $i from 0 through 5{
+  .padding-#{10 * $i}px { padding: 10px * $i;}
+}
+
+
+
+/*! Ширина и высота в процентах */
+@for $i from 1 through 10{
+  .width-#{10 * $i}percent { width: 10% * $i;}
+  .height-#{10 * $i}percent { height: 10vh * $i;}
+  
+}
+
+
+
+/*! Закругление границ */
+@for $i from 1 through 5{
+  .border-radius-#{10 * $i}percent { border-radius: 10% * $i;}
+  .border-radius-#{10 * $i}px { border-radius: 10px * $i;}
+}
+
+
+
+/*! Флекс настройки */
+.display-flex{
+    display: flex;
+}
+
+@each $setting in start, end, center, space-between, space-around, space-evenly {
+  .justify-#{$setting} {justify-content: $setting;}
+}
+
+@each $setting in start, end, center {
+  .align-#{$setting} {align-items: $setting;}
+}
+
+@each $setting in row, column {
+  .flex-direction-#{$setting} {flex-direction: $setting;}
+}
+
+@each $setting in nowrap, wrap, wrap-reverse {
+  .flex-#{$setting} {flex-wrap: $setting;}
+}
